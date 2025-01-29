@@ -1,5 +1,5 @@
-import { Text, StyleSheet } from "react-native";
-import Colors from "../../constants/colors";
+import { StyleSheet, Text } from "react-native";
+import Colors from "../../constants/colors.ios";
 
 
 export default function InstructionText({children, style}){

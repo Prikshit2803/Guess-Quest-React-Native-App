@@ -1,12 +1,13 @@
-import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
-import StartGameScreen from './screens/StartGameScreen';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import GameScreen from './screens/GameScreen';
-import Colors from './constants/colors';
+import { ImageBackground, SafeAreaView, StyleSheet } from 'react-native';
+import Colors from './constants/colors.ios';
 import GameOverScreen from './screens/GameOverScreen';
-import { useFonts } from 'expo-font';
-import AppLoading from 'expo-app-loading';
+import GameScreen from './screens/GameScreen';
+import StartGameScreen from './screens/StartGameScreen';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const[pickedNumber,setPickedNumber] = useState('');
@@ -42,15 +43,18 @@ export default function App() {
   }
 
   if(gameIsOver && pickedNumber){
-      screen = <GameOverScreen roundsNumber={rounds} userNumber={pickedNumber} onStartNewGamw={startNewGameHandler}/>
+      screen = <GameOverScreen roundsNumber={rounds} userNumber={pickedNumber} onStartNewGame={startNewGameHandler}/>
   }
 
   return (
+    <>
+    <StatusBar style="light"/>
     <LinearGradient colors={[Colors.primary700,Colors.accent500]} style={styles.rootScreen}>
       <ImageBackground source={require('./assets/images/dice.jpg') } resizeMode="cover" style={styles.rootScreen} imageStyle={styles.backgroundImage}>
        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 

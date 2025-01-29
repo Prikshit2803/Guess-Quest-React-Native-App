@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, Dimensions } from "react-native";
-import Colors from "../../constants/colors";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
+import Colors from "../../constants/colors.ios";
 
 export default function NumberContainer({children}){
     return (

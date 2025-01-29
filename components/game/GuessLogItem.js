@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import Colors from "../../constants/colors";
+import { StyleSheet, Text, View } from "react-native";
+import Colors from "../../constants/colors.ios";
 
 export default function GameLogItem({roundNumber,guessNumber}){
     return (
